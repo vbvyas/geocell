@@ -1,0 +1,21 @@
+{
+  "name": "geocell",
+  "version": "0.0.1",
+  "description": "A REST http api for geocells",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vbvyas/geocell.git"
+  },
+  "dependencies": {
+    "JSONStream": "^0.9.0",
+    "event-stream": "^3.1.7",
+    "geolib": "*",
+    "hapi": "*",
+    "request": "*",
+    "shp": "0.0.1",
+    "xml2js": "*"
+  },
+  "author": "vbvyas",
+  "license": "MIT"
+}
