@@ -22,44 +22,39 @@ function getIndexPosition(min, max, val) {
   return { index: 3, min: quad3, max: max };
 }
 
-// maps the lat, long index to a sextant value (0 -9, A - F)
-// note that latitude goes from north pole to south pole i.e top to bottom
-// and longitude goes from left to right
+// maps the lat, long index to a sextant value (0-9, A-F)
+// note that latitude goes from north pole to south pole i.e top to bottom 90 to -90
+// and longitude goes from left to right -180 to 180
 function sextant(latIndex, lngIndex) {
- if (latIndex == 0) {
-  switch (lngIndex) {
-    case 0: return "0";
-    case 1: return "1";
-    case 2: return "2";
-    case 3: retrun "3";
-  }
- }
-
- if (latIndex == 1) {
-  switch (lngIndex) {
-    case 0: return "4";
-    case 1: return "5";
-    case 2: return "6";
-    case 3: retrun "7";
-  }
- }
-
- if (latIndex == 2) {
-  switch (lngIndex) {
-    case 0: return "8";
-    case 1: return "9";
-    case 2: return "A";
-    case 3: retrun "B";
-  }
- }
-
- if (latIndex == 3) {
-  switch (lngIndex) {
-    case 0: return "C";
-    case 1: return "D";
-    case 2: return "E";
-    case 3: retrun "F";
-  }
+ switch (latIndex) {
+  case 0:
+    switch (lngIndex) {
+      case 0: return "0";
+      case 1: return "1";
+      case 2: return "2";
+      case 3: return "3";
+    }
+  case 1:
+    switch (lngIndex) {
+      case 0: return "4";
+      case 1: return "5";
+      case 2: return "6";
+      case 3: return "7";
+    }
+  case 2:
+    switch (lngIndex) {
+      case 0: return "8";
+      case 1: return "9";
+      case 2: return "A";
+      case 3: return "B";
+    }
+  case 3:
+    switch (lngIndex) {
+      case 0: return "C";
+      case 1: return "D";
+      case 2: return "E";
+      case 3: return "F";
+    }
  }
 }
 
