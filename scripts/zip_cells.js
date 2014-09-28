@@ -26,7 +26,10 @@ function lngDivisions() {
   return (constants.longitude.max - constants.longitude.min) / Math.pow(4, constants.granularity);
 }
 
-zips.forEach(function (obj) {
+var take10 = zips.slice(0, 20);
+
+take10.forEach(function (obj) {
+  console.log(obj.zip);
   var coords = convertToGeoCoordinates(obj.coordinates[0]);
   var min = maxmin(coords, Math.min);
   var max = maxmin(coords, Math.max);
@@ -43,10 +46,12 @@ zips.forEach(function (obj) {
   }
 
   // instead of writing to a file this could be commited to db
-  var zipCell = { zip: obj.zip, geocells: cells };
-  var stream = JSON.stringify(zipCell, null, 2);
-  stream += ',';
-  writer.write(stream);
+  if (cells.length > 0) { // don't add empty cells
+    var zipCell = { zip: obj.zip, geocells: cells };
+    var stream = JSON.stringify(zipCell, null, 2);
+    stream += ',';
+    writer.write(stream);
+  }
 });
 
 writer.write(']');

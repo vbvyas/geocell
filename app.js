@@ -7,7 +7,11 @@ var app = Hapi.createServer('0.0.0.0', parseInt(process.env.PORT, 10) || 3000);
 function getZipCoordinates(req, res) {
   var zip = req.params.zip;
   cells.find(function (cell) {
-    res(cell.zip == zip);
+    if (cell.zip == zip) {
+      res(cell);
+    } else {
+      res({});
+    }
   });
 }
 
