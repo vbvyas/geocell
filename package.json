@@ -10,8 +10,9 @@
   "dependencies": {
     "JSONStream": "^0.9.0",
     "event-stream": "^3.1.7",
-    "geolib": "*",
-    "hapi": "*"
+    "geolib": "^2.0.14",
+    "hapi": "^6.9.0",
+    "sugar": "^1.4.1"
   },
   "author": "vbvyas",
   "license": "MIT"

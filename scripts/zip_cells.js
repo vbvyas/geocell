@@ -1,4 +1,4 @@
-var zips = require('../shp/zip.json');
+var zips = require('./zip.json');
 var constants = require('../constants.json');
 var geolib = require('geolib');
 var lib = require('../lib');
