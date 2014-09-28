@@ -60,12 +60,12 @@ exports.getCell = function(lat, lng, granularity) {
   for (var i = 0; i < granularity; i++) {
     var latObj = getIndexPosition(minLat, maxLat, lat);
     var lngObj = getIndexPosition(minLng, maxLng, lng);
-    cellCode.push(sextant(latObj.index, lngObj.index);
+    cellCode.push(sextant(latObj.index, lngObj.index));
     minLat = latObj.min;
     maxLat = latObj.max;
     minLng = lngObj.min;
     maxLng = lngObj.max;
   }
 
-  return { key: cellCode.join(''), min: { lat: minLat, lng: minLng }, max: { lat: maxLat, lng: maxLng } };
+  return { key: cellCode.join(''), min: { latitude: minLat, longitude: minLng }, max: { latitude: maxLat, longitude: maxLng } };
 }
