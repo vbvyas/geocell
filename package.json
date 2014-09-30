@@ -12,6 +12,7 @@
     "event-stream": "^3.1.7",
     "geolib": "^2.0.14",
     "hapi": "^6.9.0",
+    "mongoose": "^3.8.17",
     "sugar": "^1.4.1"
   },
   "author": "vbvyas",
