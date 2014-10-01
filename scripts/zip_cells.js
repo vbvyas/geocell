@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/geocell_dev');
 var Geocell = mongoose.model('Geocell');
 var zips = require('./zip.json');
 var constants = require('../constants.json');
