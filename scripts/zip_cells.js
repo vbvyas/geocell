@@ -1,3 +1,5 @@
+var mongoose = require('mongoose');
+var Geocell = mongoose.model('Geocell');
 var zips = require('./zip.json');
 var constants = require('../constants.json');
 var geolib = require('geolib');
@@ -51,6 +53,11 @@ take10.forEach(function (obj) {
     var stream = JSON.stringify(zipCell, null, 2);
     stream += ',';
     writer.write(stream);
+    zipCell.save(function (err) {
+      if (err) {
+        console.log('Failed to save geocell for:', obj.zip);
+      }
+    });
   }
 });
 

@@ -1,6 +1,8 @@
 var Hapi = require('hapi');
 require('sugar');
 var cells = require('./scripts/cells.json');
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/geocell_dev');
 
 var app = Hapi.createServer('0.0.0.0', parseInt(process.env.PORT, 10) || 3000);
 

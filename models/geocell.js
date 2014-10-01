@@ -6,3 +6,5 @@ var GeocellSchema = new Schema({
   zip: { type: String, trim: true },
   geocells: { type: [] }
 });
+
+mongoose.model('Geocell', GeocellSchema);
